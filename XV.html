@@ -491,11 +491,20 @@
                                             <div class="ue-audio-player__container ue-audio-player__container--content"></div>
                                             <div class="ue-audio-controls">
                                                 <div class="ue-audio-player__container ue-audio-player__container--controls">
-                                                    <audio class="ue-audio-player-element ue-audio-player-element__controls" autoplay>
-                                                        <source src="/BTS (방탄소년단) SWIM Official MV.mp3" type="audio/mp3">
-                                                    </audio>
+                                                    <audio id="miAudio" class="ue-audio-player-element ue-audio-player-element__controls" autoplay>
+    <source src="/BTS (방탄소년단) SWIM Official MV.mp3" type="audio/mp3">
+</audio>
                                                 </div>
                                             </div>
+                                            <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const audio = document.getElementById("miAudio");
+
+    audio.addEventListener("loadedmetadata", function() {
+        audio.currentTime = 28; // segundo donde inicia
+    });
+});
+</script>
                                         </div>
                                     </div>
                                     <!-- end Audio Player -->
